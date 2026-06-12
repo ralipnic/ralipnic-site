@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://ralipnic.com/sitemap.xml",
+    sitemap:
+      "https://ralipnic-site-git-main-ralipnics-projects.vercel.app/sitemap.xml",
   };
 }
