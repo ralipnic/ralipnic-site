@@ -31,10 +31,14 @@ export const metadata: Metadata = {
     title: "RALIPNIC | رالیپ نیک",
     description: "Independent Persian & Azerbaijani Rapper — 18 Tracks",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+robots: {
+  index: true,
+  follow: true,
+},
+
+verification: {
+  google: "I-hvdXBL-YnbSqOUo_-pO2hUnKP7XwMs4QSR_3bYNwc",
+},
 };
 
 export default function RootLayout({
