@@ -2,7 +2,8 @@ import { MetadataRoute } from "next";
 import { tracks } from "@/lib/tracks";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://ralipnic.com";
+  const base = "https://ralipnic-site-git-main-ralipnics-projects.vercel.app";
+
   const staticPages = [
     { url: base, priority: 1 },
     { url: `${base}/music`, priority: 0.9 },
