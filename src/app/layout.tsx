@@ -4,6 +4,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://ralipnic.com"),
 
+  // 🔵 Google Search Console Verification (اینجا مقدار واقعی رو جایگزین کن)
+  verification: {
+    google: "YOUR_GOOGLE_VERIFICATION_CODE",
+  },
+
   title: {
     default: "Ralipnic",
     template: "%s | Ralipnic",
@@ -29,12 +34,15 @@ export const metadata: Metadata = {
   ],
 
   creator: "Ralipnic",
-
   publisher: "Ralipnic",
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 
   openGraph: {
