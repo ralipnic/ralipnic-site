@@ -6,14 +6,14 @@ export const tracks: Track[] = [
     title: "Head Voor",
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/head voor.mp3",
+    downloadUrl: "/music/Head-Voor.mp3",
   },
   {
     id: "hanu",
     title: "Hanu",
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/hanu.mp3",
+    downloadUrl: "/music/Hanu.mp3",
   },
   {
     id: "moshkel",
@@ -21,7 +21,7 @@ export const tracks: Track[] = [
     titleFa: "مشکل",
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/moshkel.mp3",
+    downloadUrl: "/music/Moshkel.mp3",
   },
   {
     id: "pelak-taviz",
@@ -29,7 +29,7 @@ export const tracks: Track[] = [
     titleFa: "پلاک تعویض",
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/pelak taviz.mp3",
+    downloadUrl: "/music/Pelak-Taviz.mp3",
   },
   {
     id: "sabz",
@@ -37,7 +37,7 @@ export const tracks: Track[] = [
     titleFa: "سبز",
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/sabz.mp3",
+    downloadUrl: "/music/Sabz.mp3",
   },
   {
     id: "goosh-bedeh",
@@ -45,14 +45,14 @@ export const tracks: Track[] = [
     titleFa: "گوش بده",
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/goosh bedeh.mp3",
+    downloadUrl: "/music/Goosh-Bedeh.mp3",
   },
   {
     id: "rady",
     title: "Rady",
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-     downloadUrl: "/music/rady.mp3",
+     downloadUrl: "/music/Rady.mp3",
   },
   {
     id: "rok",
@@ -60,7 +60,7 @@ export const tracks: Track[] = [
     featuring: ["Metti"],
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/rok.mp3",
+    downloadUrl: "/music/Rok.mp3",
   },
   {
     id: "come-back",
@@ -68,7 +68,7 @@ export const tracks: Track[] = [
     featuring: ["Metti"],
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/come back.mp3",
+    downloadUrl: "/music/Come-Back.mp3",
   },
   {
     id: "nemidoonam",
@@ -76,21 +76,21 @@ export const tracks: Track[] = [
     titleFa: "نمیدونم",
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/nemidoonam.mp3",
+    downloadUrl: "/music/Nemidoonam.mp3",
   },
   {
     id: "benal",
     title: "Benal",
     genre: "Azerbaijani Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/benal.mp3",
+    downloadUrl: "/music/Benal.mp3",
   },
   {
     id: "bahsi-ni",
     title: "Bahsi Ni",
     genre: "Azerbaijani Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/bahsi ni.mp3",
+    downloadUrl: "/music/Bahsi-Ni.mp3",
   },
   {
     id: "jangi",
@@ -98,7 +98,7 @@ export const tracks: Track[] = [
     titleFa: "جنگی",
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/jangi.mp3",
+    downloadUrl: "/music/Jangi.mp3",
   },
   {
     id: "rassam",
@@ -106,7 +106,7 @@ export const tracks: Track[] = [
     titleFa: "رسام",
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/rassam.mp3",
+    downloadUrl: "/music/Rassam.mp3",
   },
   {
     id: "mashghi",
@@ -114,7 +114,7 @@ export const tracks: Track[] = [
     titleFa: "مشغی",
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/mashghi.mp3",
+    downloadUrl: "/music/Mashghi.mp3",
   },
   {
     id: "lash-gusht",
@@ -123,7 +123,7 @@ export const tracks: Track[] = [
     featuring: ["Wonder"],
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/lash gusht.mp3",
+    downloadUrl: "/music/Lash-Gusht.mp3",
   },
   {
     id: "otagh",
@@ -131,7 +131,7 @@ export const tracks: Track[] = [
     titleFa: "اتاق",
     genre: "Persian Rap / Azerbaijani Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/otagh.mp3",
+    downloadUrl: "/music/Otagh.mp3",
   },
   {
     id: "kalameh",
@@ -139,7 +139,7 @@ export const tracks: Track[] = [
     titleFa: "کلمه",
     genre: "Persian Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/kalameh.mp3",
+    downloadUrl: "/music/Kalameh.mp3",
   },
 ];
 

@@ -18,12 +18,18 @@ export default function TrackCard({
   layout = "row",
 }: TrackCardProps) {
   const { currentTrack, isPlaying, toggle } = usePlayer();
+
   const isActive = currentTrack?.id === track.id;
   const isThisPlaying = isActive && isPlaying;
 
   const displayTitle = track.featuring
     ? `${track.title} (feat. ${track.featuring.join(", ")})`
     : track.title;
+
+  const handleToggle = () => {
+    console.log("🎵 TRACK CLICKED:", track);
+    toggle(track);
+  };
 
   if (layout === "grid") {
     return (
@@ -34,9 +40,8 @@ export default function TrackCard({
             ? "border-blood-600 bg-void-800"
             : "border-void-800 hover:border-void-600 hover:bg-void-800"
         )}
-        onClick={() => toggle(track)}
+        onClick={handleToggle}
       >
-        {/* Track number */}
         <div className="flex items-start justify-between mb-3">
           <span
             className={cn(
@@ -46,9 +51,8 @@ export default function TrackCard({
           >
             {String(index + 1).padStart(2, "0")}
           </span>
-          {isActive && (
-            <WaveformIcon isPlaying={isThisPlaying} size="sm" />
-          )}
+
+          {isActive && <WaveformIcon isPlaying={isThisPlaying} size="sm" />}
         </div>
 
         <p
@@ -61,7 +65,9 @@ export default function TrackCard({
         </p>
 
         {track.titleFa && (
-          <p className="fa-text text-void-500 text-xs mb-3">{track.titleFa}</p>
+          <p className="fa-text text-void-500 text-xs mb-3">
+            {track.titleFa}
+          </p>
         )}
 
         <div className="flex items-center justify-between mt-auto">
@@ -85,9 +91,8 @@ export default function TrackCard({
             )}
             onClick={(e) => {
               e.stopPropagation();
-              toggle(track);
+              handleToggle();
             }}
-            aria-label={isThisPlaying ? "Pause" : "Play"}
           >
             {isThisPlaying ? (
               <Pause size={10} className="text-white" />
@@ -100,7 +105,7 @@ export default function TrackCard({
     );
   }
 
-  // Row layout (default)
+  // ROW layout
   return (
     <div
       className={cn(
@@ -108,9 +113,8 @@ export default function TrackCard({
         isActive && "border-l-blood-500 bg-blood-950/20"
       )}
       style={{ borderLeftColor: isActive ? "var(--color-blood)" : undefined }}
-      onClick={() => toggle(track)}
+      onClick={handleToggle}
     >
-      {/* Index / play button */}
       <div className="w-8 flex-shrink-0 flex items-center justify-center">
         {isActive ? (
           <WaveformIcon isPlaying={isThisPlaying} size="sm" />
@@ -127,7 +131,6 @@ export default function TrackCard({
         )}
       </div>
 
-      {/* Track info */}
       <div className="flex-1 min-w-0">
         <p
           className={cn(
@@ -137,12 +140,12 @@ export default function TrackCard({
         >
           {displayTitle}
         </p>
+
         {track.titleFa && (
           <p className="fa-text text-void-600 text-xs">{track.titleFa}</p>
         )}
       </div>
 
-      {/* Genre badge */}
       <span
         className={cn(
           "hidden sm:block text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-sm flex-shrink-0",
@@ -154,7 +157,6 @@ export default function TrackCard({
         {track.genre.replace(" Rap", "")}
       </span>
 
-      {/* Actions */}
       <div className="flex items-center gap-2 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
         {track.downloadUrl && (
           <a
@@ -162,12 +164,11 @@ export default function TrackCard({
             download
             onClick={(e) => e.stopPropagation()}
             className="p-1.5 text-void-500 hover:text-white transition-colors"
-            aria-label={`Download ${track.title}`}
-            title="Download"
           >
             <Download size={13} />
           </a>
         )}
+
         {track.soundcloudUrl && (
           <a
             href={track.soundcloudUrl}
@@ -175,8 +176,6 @@ export default function TrackCard({
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
             className="p-1.5 text-void-500 hover:text-blood-500 transition-colors"
-            aria-label={`Listen to ${track.title} on SoundCloud`}
-            title="SoundCloud"
           >
             <ExternalLink size={13} />
           </a>

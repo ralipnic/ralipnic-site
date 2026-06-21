@@ -1,74 +1,80 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  useState,
-  useCallback,
-  type ReactNode,
-} from "react";
+import { createContext, useContext, useRef, useState } from "react";
 import { Track } from "@/types";
-import AudioPlayer from "./AudioPlayer";
 
-interface PlayerContextValue {
+type PlayerContextType = {
   currentTrack: Track | null;
   isPlaying: boolean;
-  play: (track: Track) => void;
-  pause: () => void;
   toggle: (track: Track) => void;
-}
+};
 
-const PlayerContext = createContext<PlayerContextValue>({
-  currentTrack: null,
-  isPlaying: false,
-  play: () => {},
-  pause: () => {},
-  toggle: () => {},
-});
+const PlayerContext = createContext<PlayerContextType | null>(null);
 
-export function PlayerProvider({ children }: { children: ReactNode }) {
+export function PlayerProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
   const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const play = useCallback((track: Track) => {
-    setCurrentTrack(track);
-    setIsPlaying(true);
-  }, []);
+  const toggle = (track: Track) => {
+    console.log("🎧 PLAY:", track);
 
-  const pause = useCallback(() => {
-    setIsPlaying(false);
-  }, []);
+    if (!audioRef.current) {
+      audioRef.current = new Audio();
+    }
 
-  const toggle = useCallback(
-    (track: Track) => {
-      if (currentTrack?.id === track.id) {
-        setIsPlaying((v) => !v);
+    if (currentTrack?.id === track.id) {
+      if (isPlaying) {
+        audioRef.current.pause();
+        setIsPlaying(false);
       } else {
+        audioRef.current
+          .play()
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((err) => {
+            console.error("Play failed:", err);
+          });
+      }
+      return;
+    }
+
+    if (!track.downloadUrl) return;
+
+    audioRef.current.src = track.downloadUrl;
+    audioRef.current.load();
+
+    audioRef.current
+      .play()
+      .then(() => {
         setCurrentTrack(track);
         setIsPlaying(true);
-      }
-    },
-    [currentTrack]
-  );
-
-  const handleClose = () => {
-    setCurrentTrack(null);
-    setIsPlaying(false);
+      })
+      .catch((err) => {
+        console.error("Play failed:", err);
+      });
   };
 
   return (
-    <PlayerContext.Provider value={{ currentTrack, isPlaying, play, pause, toggle }}>
+    <PlayerContext.Provider value={{ currentTrack, isPlaying, toggle }}>
       {children}
-      <AudioPlayer
-        track={currentTrack}
-        isPlaying={isPlaying}
-        onPlayPause={() => setIsPlaying((v) => !v)}
-        onClose={handleClose}
-      />
+      <audio ref={audioRef} />
     </PlayerContext.Provider>
   );
 }
 
 export function usePlayer() {
-  return useContext(PlayerContext);
+  const ctx = useContext(PlayerContext);
+
+  if (!ctx) {
+    throw new Error("usePlayer must be inside PlayerProvider");
+  }
+
+  return ctx;
 }
