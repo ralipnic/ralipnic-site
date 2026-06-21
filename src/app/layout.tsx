@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://ralipnic.com"),
 
-  // 🔵 Google Search Console Verification (اینجا مقدار واقعی رو جایگزین کن)
+  // ✅ Google Search Console Verification
   verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
+    google: "EGmnFv_OWlUY35MNv91P-agp6bJ1t3MBe7cwVSlxpLo",
   },
 
   title: {
