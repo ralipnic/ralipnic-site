@@ -83,7 +83,7 @@ export const tracks: Track[] = [
     title: "Benal",
     genre: "Azerbaijani Rap",
     soundcloudUrl: "https://soundcloud.com/ali-alipoor-141068609",
-    downloadUrl: "/music/Benal.mp3",
+    downloadUrl: "/music/benal.mp3",
   },
   {
     id: "bahsi-ni",
